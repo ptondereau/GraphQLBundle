@@ -80,7 +80,7 @@ class GraphController
     private function createResponse(Request $request, $schemaName, $batched)
     {
         if ('OPTIONS' === $request->getMethod()) {
-            $response = new Response('', 200);
+            $response = new JsonResponse([], 200);
         } else {
             if (!\in_array($request->getMethod(), ['POST', 'GET'])) {
                 return new Response('', 405);
